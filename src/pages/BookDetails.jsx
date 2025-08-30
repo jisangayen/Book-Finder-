@@ -8,6 +8,8 @@ export default function BookDetails() {
 
   useEffect(() => {
     async function fetchBook() {
+      setBook(null);
+      setAuthor(null);
       try {
         const res = await fetch(`https://openlibrary.org/works/${id}.json`);
         const data = await res.json();
@@ -30,7 +32,12 @@ export default function BookDetails() {
     fetchBook();
   }, [id]);
 
-  if (!book) return <p className="text-center text-white">Loading...</p>;
+  if (!book)
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-purple-500"></div>
+      </div>
+    );
 
   return (
     <div className="p-6 text-white">

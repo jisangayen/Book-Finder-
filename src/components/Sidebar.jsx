@@ -31,7 +31,7 @@ export default function Sidebar() {
         <div className="flex items-center gap-2 mb-10">
           {/* <Book size={28} className="text-purple-400" /> */}
           <img src="/f1.png" alt="" className="h-8 w-8" />
-          <h1 className="text-xl font-bold">Book <span className="text-purple-500">Finder</span></h1>
+          <h1 className="text-xl font-bold ">Book <span className="text-purple-500">Finder</span></h1>
         </div>
 
         {/* Navigation */}
