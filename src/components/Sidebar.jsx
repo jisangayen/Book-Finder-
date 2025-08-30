@@ -14,7 +14,8 @@ export default function Sidebar() {
     <div className="h-screen w-64 bg-gray-900 text-white flex flex-col p-6 fixed left-0 top-0 border-r border-gray-800">
       {/* Logo */}
       <div className="flex items-center gap-2 mb-10">
-        <Book size={28} className="text-purple-400" />
+        {/* <Book size={28} className="text-purple-400" /> */}
+        <img src="/f1.png" alt="" className="h-8 w-8" />
         <h1 className="text-xl font-bold">Book Finder</h1>
       </div>
 
