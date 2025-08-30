@@ -39,6 +39,11 @@ export default function Dashboard() {
 
   return (
     <div className="p-4 sm:p-6">
+      
+      <div className="flex items-center gap-2 mb-5 md:hidden justify-self-start">
+          <img src="/f1.png" alt="" className="h-10 w-10" />
+          <h1 className="text-3xl font-bold ">Book <span className="text-purple-500">Finder</span></h1>
+      </div>
       {/* Search Form */}
       <form onSubmit={searchBooks} className="flex flex-col sm:flex-row gap-2 mb-6">
         <input
@@ -52,9 +57,9 @@ export default function Dashboard() {
           Search
         </button>
       </form>
-      <div className="flex gap-5">
-        <img src="/f1.png" alt="" className="h-8 w-8" />
-        <h2 className="mb-8 text-white font-semibold text-2xl">Explore Books</h2>
+      <div className="flex">
+        <img src="/f1.png" alt="" className="sm: h-6 sm:w-6 lg:h-8 lg:w-8" />
+        <h2 className="mb-8 ml-3 text-white font-semibold xl:text-2xl sm:text-xl">Explore Books</h2>
       </div>
 
       {/* Book Grid */}
