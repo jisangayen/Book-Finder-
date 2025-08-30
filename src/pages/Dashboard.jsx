@@ -38,9 +38,9 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="p-6">
+    <div className="p-4 sm:p-6">
       {/* Search Form */}
-      <form onSubmit={searchBooks} className="flex gap-2 mb-6">
+      <form onSubmit={searchBooks} className="flex flex-col sm:flex-row gap-2 mb-6">
         <input
           type="text"
           value={query}
@@ -52,9 +52,13 @@ export default function Dashboard() {
           Search
         </button>
       </form>
+      <div className="flex gap-5">
+        <img src="/f1.png" alt="" className="h-8 w-8" />
+        <h2 className="mb-8 text-white font-semibold text-2xl">Explore Books</h2>
+      </div>
 
       {/* Book Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
         {books.map((book) => (
           <Link
             key={book.key}
@@ -68,10 +72,10 @@ export default function Dashboard() {
                   : "https://via.placeholder.com/200x300?text=No+Cover"
               }
               alt={book.title}
-              className="rounded-t-xl w-full h-72 object-cover"
+              className="rounded-t-xl w-full h-64 sm:h-72 object-cover"
             />
             <div className="p-4">
-              <h2 className="font-semibold text-lg text-white truncate group-hover:text-purple-400 transition">
+              <h2 className="font-semibold text-base sm:text-lg text-white truncate group-hover:text-purple-400 transition">
                 {book.title}
               </h2>
               <p className="text-sm text-gray-400">
@@ -87,7 +91,7 @@ export default function Dashboard() {
 
       {/* Pagination */}
       {books.length > 0 && (
-        <div className="flex justify-center mt-8 gap-4">
+        <div className="flex justify-center mt-8 gap-4 flex-wrap">
           {page > 1 && (
             <button
               onClick={() => loadPage(page - 1)}

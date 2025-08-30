@@ -7,12 +7,14 @@ import BookDetails from "./pages/BookDetails";
 
 export default function App() {
   return (
-    <div className="flex">
-      {/* Sidebar */}
-      <Sidebar />
+    <div className="flex min-h-screen bg-gray-950 text-white">
+      {/* Sidebar (fixed on desktop, collapsible on mobile) */}
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
 
       {/* Main Content */}
-      <main className="ml-64 flex-1 p-6 bg-gray-950 min-h-screen text-white">
+      <main className="flex-1 p-4 md:ml-64">
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/collections" element={<Collections />} />
